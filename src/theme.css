@@ -1,0 +1,91 @@
+/* ===== FROST BUTTONS ===== */
+
+.btn-primary {
+  background: linear-gradient(90deg, #8BE9FF, #F2F6FA);
+  color: #02060C;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 0 18px rgba(130, 230, 255, 0.7);
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 28px rgba(130, 230, 255, 1);
+}
+
+/* Frost Glass Button */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 18px;
+  border-radius: 12px;
+  color: var(--frost-white);
+  backdrop-filter: blur(6px);
+}
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(140, 240, 255, 0.5);
+}
+
+/* ===== TITLES ===== */
+h1, h2, h3 {
+  color: var(--frost-white);
+  text-shadow: 0 0 16px rgba(140, 240, 255, 0.35);
+  letter-spacing: 1px;
+}
+
+/* ===== INPUTS (Login / Signup) ===== */
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--frost-white);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+.input:focus {
+  border-color: var(--ice-blue);
+  box-shadow: 0 0 12px rgba(140, 240, 255, 0.35);
+}
+
+/* ===== PRODUCT CARDS ===== */
+
+.product-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  transition: 0.35s ease;
+}
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(140, 240, 255, 0.4);
+  box-shadow: 0 0 22px rgba(140, 240, 255, 0.25);
+}
+
+/* Glow on hover images */
+.product-img-glow {
+  opacity: 0;
+  transition: 0.4s;
+}
+.product-card:hover .product-img-glow {
+  opacity: 1;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+.navbar a {
+  color: var(--frost-white);
+  opacity: 0.85;
+}
+.navbar a:hover {
+  color: var(--ice-blue);
+  opacity: 1;
+}

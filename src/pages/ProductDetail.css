@@ -1,0 +1,200 @@
+/* ===== PAGE LAYOUT ===== */
+
+.product-detail-page {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.product-detail-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+
+.pd-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pd-hero {
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, #17172e, #050814 70%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.85);
+  padding: 14px;
+  height: 340px;
+}
+
+.pd-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+.pd-title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.pd-sub {
+  font-size: 14px;
+  color: #a5b4fc;
+}
+
+/* RIGHT SIDE PANEL */
+
+.pd-right {
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, #151627, #040614 70%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.9);
+  padding: 18px 20px 22px;
+}
+
+.pd-panel-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* KEY VARIANTS */
+
+.pd-variant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pd-variant-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.95);
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.16s ease;
+}
+
+.pd-variant-card strong {
+  font-weight: 700;
+}
+
+.pd-variant-card.active {
+  border-color: transparent;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  box-shadow: 0 0 24px rgba(236, 72, 153, 0.75);
+}
+
+.pd-summary {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+/* BUY BUTTON */
+
+.pd-btn-buy {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, #22c55e, #0ea5e9);
+  color: white;
+  box-shadow: 0 0 26px rgba(34, 197, 94, 0.8);
+  transition: 0.16s ease;
+}
+
+.pd-btn-buy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 1);
+}
+
+/* FEATURES + REQS SECTIONS */
+
+.pd-section {
+  margin-top: 24px;
+}
+
+.pd-section h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+/* Accordion */
+
+.pd-accordion-item {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  margin-bottom: 8px;
+}
+
+.pd-accordion-header {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(15, 23, 42, 0.98);
+  border: none;
+  color: #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pd-accordion-body {
+  list-style: none;
+  margin: 0;
+  padding: 10px 16px 12px;
+  background: rgba(17, 24, 39, 0.98);
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.pd-accordion-body li + li {
+  margin-top: 4px;
+}
+
+/* System reqs reuse accordion body */
+
+.pd-reqs {
+  border-radius: 14px;
+  border: 1px solid rgba(55, 65, 81, 0.8);
+}
+
+/* Back link */
+
+.pd-back-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .product-detail-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pd-hero {
+    height: 260px;
+  }
+}
