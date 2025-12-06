@@ -22,13 +22,19 @@ export const products = [
       {
         id: "external-7d",
         label: "7 Days",
-        price: "$15",
+        price: "$12.5",
+        checkoutUrl: "https://your-sellauth-link-for-7d"
+      },
+      {
+        id: "external-3d",
+        label: "3 Days",
+        price: "$7.5",
         checkoutUrl: "https://your-sellauth-link-for-7d"
       },
       {
         id: "external-30d",
         label: "30 Days",
-        price: "$45",
+        price: "$30",
         checkoutUrl: "https://your-sellauth-link-for-30d"
       }
       // 🔥 Lifetime removed
