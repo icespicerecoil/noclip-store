@@ -11,12 +11,12 @@ export const products = [
     image: "/noclip-external.png",
     tags: ["External", "Undetected", "Legit play"],
     // ✅ prices updated
-    priceFrom: "$4",
+    priceFrom: "$3.5",
     plans: [
       {
         id: "external-1d",
         label: "1 Day",
-        price: "$4",
+        price: "$3.5",
         checkoutUrl: "https://your-sellauth-link-for-1d"
       },
       {

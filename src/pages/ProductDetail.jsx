@@ -57,7 +57,7 @@ export default function ProductDetail() {
               {product.ribbon || "Best for legit closet"}
             </p>
 
-            <h1 className="product-detail-title">{product.name}</h1>
+      z      <h1 className="product-detail-title">{product.name}</h1>
 
             <p className="product-detail-subtitle">
               {product.longSubtitle || product.subtitle}
