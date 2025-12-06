@@ -11,17 +11,35 @@ export const products = [
     subtitle:
       "Low-footprint Rust external with ESP, aim assist and quality-of-life features.",
     longSubtitle:
-      "Rust external cheat designed for safe closet play. Smooth ESP, legit aim assist with configurable smoothing, QoL features and a low, undetected footprint. Currently not available for purchase.",
-    image: "/noclip-pro.png",
+      "Rust external cheat designed for safe closet play. Smooth ESP, legit aim assist, QoL features and a low undetected footprint. Not yet available.",
+    image: "/noclip-external.png",
     tags: ["External", "Rust", "Coming Soon"],
     priceFrom: "Soon",
     comingSoon: true,
     plans: [
       {
-        id: "rust-ext-soon",
-        label: "Coming soon",
-        price: "TBA",
-        checkoutUrl: "#"
+        id: "rust-ext-1d",
+        label: "1 Day",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "rust-ext-3d",
+        label: "3 Days",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "rust-ext-week",
+        label: "Week",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "rust-ext-month",
+        label: "Month",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
       }
     ]
   },
@@ -36,18 +54,36 @@ export const products = [
     subtitle:
       "Fortnite external cheat designed for smooth ESP, clean aim assist, and undetected closet play.",
     longSubtitle:
-      "Fortnite external cheat designed for safe closet use. Smooth ESP with clean visuals, legit aim assist, low CPU usage and a fully undetected footprint.",
+      "Fortnite external cheat with smooth ESP, legit aim assist, low CPU usage and undetected performance.",
     image: "/noclip-fortnite.png",
     tags: ["External", "Fortnite", "Undetected", "Legit play"],
     priceFrom: "$3.5",
     comingSoon: false,
     plans: [
       {
-        id: "fn-ext-1d",
+        id: "fn-1d",
         label: "1 Day",
         price: "$3.5",
         checkoutUrl:
           "https://no-clip.mysellauth.com/checkout/7c5bca75fb727-0000008388525"
+      },
+      {
+        id: "fn-3d",
+        label: "3 Days",
+        price: "$7.5",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "fn-week",
+        label: "Week",
+        price: "$12.5",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "fn-month",
+        label: "Month",
+        price: "$30",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
       }
     ]
   },
@@ -61,8 +97,8 @@ export const products = [
     ribbon: "Fresh & Ready",
     subtitle: "Fresh Rust NFA accounts with instant delivery.",
     longSubtitle:
-      "Fresh Rust NFA accounts delivered instantly after payment. Perfect if you need a clean Rust account for legit or closet play.",
-    image: "/noclip-r6.png", // using this art for now
+      "Fresh Rust NFA accounts delivered instantly after payment.",
+    image: "/noclip-accounts.png",
     tags: ["Accounts", "Rust", "NFA"],
     priceFrom: "$3",
     comingSoon: false,
@@ -84,19 +120,37 @@ export const products = [
     id: "rust-internal",
     name: "Rust Internal",
     ribbon: "Coming Soon",
-    subtitle: "High-performance Rust internal cheat. Currently in development.",
+    subtitle: "High-performance Rust internal cheat. In development.",
     longSubtitle:
-      "Rust internal cheat with advanced rage & legit features. Still in development and not available for purchase yet.",
+      "Advanced legit/rage Rust internal cheat currently in development.",
     image: "/noclip-pro.png",
     tags: ["Internal", "Rust", "Coming Soon"],
     priceFrom: "Soon",
     comingSoon: true,
     plans: [
       {
-        id: "rust-int-soon",
-        label: "Coming soon",
-        price: "TBA",
-        checkoutUrl: "#"
+        id: "rust-int-1d",
+        label: "1 Day",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "rust-int-3d",
+        label: "3 Days",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "rust-int-week",
+        label: "Week",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "rust-int-month",
+        label: "Month",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
       }
     ]
   },
@@ -109,19 +163,37 @@ export const products = [
     name: "Rainbow Six External",
     ribbon: "Coming Soon",
     subtitle:
-      "Rainbow Six Siege external cheat with ESP and legit aim assist. In development.",
+      "Rainbow Six Siege external cheat with ESP and legit aim assist.",
     longSubtitle:
-      "Rainbow Six external cheat with ESP, aim assist and QoL features. Currently being developed and not yet available for purchase.",
+      "R6 external cheat with ESP, aim assist, visibility checks and QoL features.",
     image: "/noclip-r6.png",
     tags: ["External", "R6", "Coming Soon"],
     priceFrom: "Soon",
     comingSoon: true,
     plans: [
       {
-        id: "r6-ext-soon",
-        label: "Coming soon",
-        price: "TBA",
-        checkoutUrl: "#"
+        id: "r6-1d",
+        label: "1 Day",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "r6-3d",
+        label: "3 Days",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "r6-week",
+        label: "Week",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "r6-month",
+        label: "Month",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
       }
     ]
   },
@@ -133,19 +205,31 @@ export const products = [
     id: "hwid-spoofer",
     name: "HWID Spoofer",
     ribbon: "Coming Soon",
-    subtitle: "Protect your HWID from bans and traces. In development.",
+    subtitle: "Protect your hardware ID from bans & traces.",
     longSubtitle:
-      "NoClip HWID spoofer designed to clean traces, mask identifiers, and protect your setup. Currently unavailable and coming soon.",
+      "Spoofer designed to clean traces and mask identifiers.",
     image: "/noclip-spoofer.png",
     tags: ["Spoofer", "HWID", "Coming Soon"],
     priceFrom: "Soon",
     comingSoon: true,
     plans: [
       {
-        id: "spoofer-soon",
-        label: "Coming soon",
-        price: "TBA",
-        checkoutUrl: "#"
+        id: "spoofer-1d",
+        label: "1 Day",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "spoofer-week",
+        label: "Week",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
+      },
+      {
+        id: "spoofer-month",
+        label: "Month",
+        price: "Soon",
+        checkoutUrl: "https://no-clip.mysellauth.com/checkout/REPLACE_ME"
       }
     ]
   }
