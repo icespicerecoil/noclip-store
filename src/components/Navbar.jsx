@@ -18,6 +18,10 @@ export default function Navbar() {
         <Link to="/status">Status</Link>
         <Link to="/support">Support</Link>
 
+        {/* NEW TABS */}
+        <Link to="/guide">Guide</Link>
+        <Link to="/cart">Cart</Link>
+
         {/* DISCORD BUTTON */}
         <a
           href="https://discord.gg/EuFPeMAqc3"

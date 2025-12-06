@@ -1,74 +1,76 @@
+// src/pages/cart.jsx
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useCart } from "../context/CartContext";
-import { useAuth } from "../context/AuthContext";
+import "./cart.css";
+import { useCart } from "../context/CartContext.jsx";
 
 export default function Cart() {
-  const { items, removeItem, clearCart } = useCart();
-  const { user } = useAuth();
-  const navigate = useNavigate();
+  const { items, removeFromCart, clearCart } = useCart();
 
-  const handleCheckout = () => {
-    if (!user) {
-      navigate("/login", { state: { from: "/cart" } });
-      return;
-    }
-    navigate("/checkout");
-  };
-
-  const empty = !items || items.length === 0;
+  const total = items.reduce(
+    (sum, item) => sum + (item.price || 0) * item.qty,
+    0
+  );
 
   return (
-    <main className="section section-dark">
+    <main className="section section-dark cart-page">
       <div className="section-inner">
-        <h1 className="section-title">Your cart</h1>
-        <p className="section-sub">
-          Keys are delivered to your account email after payment.
-        </p>
+        <h1 className="section-title">Cart</h1>
 
-        {empty ? (
-          <div style={{ marginTop: 24 }}>
-            <p>Your cart is empty.</p>
-            <Link to="/products" className="btn-outline">
-              Browse products
-            </Link>
-          </div>
+        {items.length === 0 ? (
+          <p className="muted">Your cart is empty.</p>
         ) : (
           <>
-            <div className="cart-list">
+            <div className="cart-items">
               {items.map((item) => (
-                <div
-                  key={`${item.productId}-${item.planId}`}
-                  className="cart-row"
+                <article
+                  key={`${item.productId}-${item.planId || "base"}`}
+                  className="cart-item"
                 >
-                  <div>
-                    <div className="cart-title">{item.productTitle}</div>
-                    <div className="cart-sub">
-                      {item.planLabel} · Qty {item.quantity}
+                  <div className="cart-item-left">
+                    {item.image && (
+                      <div className="cart-item-img">
+                        <img src={item.image} alt={item.name} />
+                      </div>
+                    )}
+                    <div>
+                      <h2 className="cart-item-title">{item.name}</h2>
+                      {item.planName && (
+                        <p className="cart-item-plan">
+                          Plan: {item.planName}
+                        </p>
+                      )}
                     </div>
                   </div>
-                  <div className="cart-right">
-                    <span className="cart-price">{item.price}</span>
+
+                  <div className="cart-item-right">
+                    <p className="cart-item-price">
+                      ${item.price.toFixed(2)} × {item.qty}
+                    </p>
                     <button
-                      className="btn-small"
+                      className="btn btn-ghost"
                       onClick={() =>
-                        removeItem(item.productId, item.planId)
+                        removeFromCart(item.productId, item.planId)
                       }
                     >
                       Remove
                     </button>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
 
-            <div className="cart-actions">
-              <button className="btn-outline" onClick={clearCart}>
-                Clear cart
-              </button>
-              <button className="btn-primary" onClick={handleCheckout}>
-                Checkout
-              </button>
+            <div className="cart-footer">
+              <div className="cart-total">
+                <span>Total</span>
+                <strong>${total.toFixed(2)}</strong>
+              </div>
+              <div className="cart-actions">
+                <button className="btn btn-ghost" onClick={clearCart}>
+                  Clear cart
+                </button>
+                {/* Hook this to your real checkout later */}
+                <button className="btn btn-primary">Checkout</button>
+              </div>
             </div>
           </>
         )}

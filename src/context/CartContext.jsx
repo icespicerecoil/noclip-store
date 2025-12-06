@@ -1,22 +1,64 @@
 // src/context/CartContext.jsx
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-const CartContext = createContext();
+const CartContext = createContext(null);
 
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
+  const [items, setItems] = useState([]);
 
-  const addItem = (item) => {
-    setCart((prev) => [...prev, item]);
-  };
+  function addToCart(product, plan) {
+    if (!product) return;
 
-  return (
-    <CartContext.Provider value={{ cart, addItem }}>
-      {children}
-    </CartContext.Provider>
-  );
+    const planId = plan?.id || null;
+
+    setItems((prev) => {
+      const existingIndex = prev.findIndex(
+        (item) => item.productId === product.id && item.planId === planId
+      );
+
+      if (existingIndex !== -1) {
+        const copy = [...prev];
+        copy[existingIndex] = {
+          ...copy[existingIndex],
+          qty: copy[existingIndex].qty + 1,
+        };
+        return copy;
+      }
+
+      return [
+        ...prev,
+        {
+          productId: product.id,
+          name: product.name,
+          image: product.image || product.heroImage || "",
+          planId,
+          planName: plan?.name || null,
+          price: plan?.price ?? product.price ?? 0,
+          qty: 1,
+        },
+      ];
+    });
+  }
+
+  function removeFromCart(productId, planId = null) {
+    setItems((prev) =>
+      prev.filter(
+        (item) => !(item.productId === productId && item.planId === planId)
+      )
+    );
+  }
+
+  function clearCart() {
+    setItems([]);
+  }
+
+  const value = { items, addToCart, removeFromCart, clearCart };
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 
 export function useCart() {
-  return useContext(CartContext);
+  const ctx = useContext(CartContext);
+  if (!ctx) throw new Error("useCart must be used inside <CartProvider />");
+  return ctx;
 }
