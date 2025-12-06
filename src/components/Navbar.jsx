@@ -1,9 +1,10 @@
+// src/components/Navbar.jsx
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const { user, logout } = useAuth(); // user = logged in user OR null
+  const { user, logout } = useAuth();
 
   return (
     <header className="nav">
@@ -17,12 +18,10 @@ export default function Navbar() {
         <Link to="/products">Products</Link>
         <Link to="/status">Status</Link>
         <Link to="/support">Support</Link>
-
-        {/* NEW TABS */}
         <Link to="/guide">Guide</Link>
         <Link to="/cart">Cart</Link>
+        <Link to="/tos">TOS</Link>
 
-        {/* DISCORD BUTTON */}
         <a
           href="https://discord.gg/EuFPeMAqc3"
           className="discord-btn"
@@ -32,7 +31,6 @@ export default function Navbar() {
           Join Discord
         </a>
 
-        {/* AUTH BUTTONS */}
         {!user && (
           <>
             <Link to="/login" className="auth-btn">

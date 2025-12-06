@@ -13,6 +13,7 @@ import Guide from "./pages/Guide.jsx";
 import Cart from "./pages/cart.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+import TOS from "./pages/TOS.jsx"; // <-- Terms of Service page
 
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/tos" element={<TOS />} />
           </Routes>
         </Router>
       </CartProvider>
