@@ -1,16 +1,19 @@
 // src/data/products.js
 
 export const products = [
+  // ----------------------------------------------------
+  // RUST EXTERNAL (renamed from NoClip External)
+  // ----------------------------------------------------
   {
     id: "external",
-    name: "NoClip External",
+    name: "Rust External",
     ribbon: "Best for legit closet",
-    subtitle: "Low-footprint external with ESP, aim assist and quality-of-life features.",
+    subtitle:
+      "Low-footprint external with ESP, aim assist and quality-of-life features.",
     longSubtitle:
       "Low footprint external with ESP, aim assist and solid QoL features. Built for legit closet players who still care about surviving the next wave of bans.",
     image: "/noclip-external.png",
     tags: ["External", "Undetected", "Legit play"],
-    // ✅ prices updated
     priceFrom: "$3.5",
     plans: [
       {
@@ -20,24 +23,23 @@ export const products = [
         checkoutUrl: "https://your-sellauth-link-for-1d"
       },
       {
-        id: "external-7d",
-        label: "7 Days",
-        price: "$12.5",
-        checkoutUrl: "https://your-sellauth-link-for-7d"
-      },
-      {
         id: "external-3d",
         label: "3 Days",
         price: "$7.5",
-        checkoutUrl: "https://your-sellauth-link-for-7d"
+        checkoutUrl: "https://your-sellauth-link-for-3d"
       },
       {
-        id: "external-30d",
-        label: "30 Days",
+        id: "external-week",
+        label: "Week",
+        price: "$12.5",
+        checkoutUrl: "https://your-sellauth-link-for-week"
+      },
+      {
+        id: "external-month",
+        label: "Month",
         price: "$30",
-        checkoutUrl: "https://your-sellauth-link-for-30d"
+        checkoutUrl: "https://your-sellauth-link-for-month"
       }
-      // 🔥 Lifetime removed
     ],
     features: [
       "ESP with configurable filters and colors",
@@ -48,6 +50,9 @@ export const products = [
     ]
   },
 
+  // ----------------------------------------------------
+  // INTERNAL (unchanged)
+  // ----------------------------------------------------
   {
     id: "internal",
     name: "NoClip Pro (Internal)",
@@ -59,32 +64,12 @@ export const products = [
     image: "/noclip-pro.png",
     tags: ["Internal", "Full control"],
     priceFrom: "$9.99",
-    comingSoon: true, // ✅ flag so we can show COMING SOON
+    comingSoon: true,
     plans: [
-      {
-        id: "internal-1d",
-        label: "1 Day",
-        price: "$9.99",
-        checkoutUrl: "https://your-sellauth-link"
-      },
-      {
-        id: "internal-7d",
-        label: "7 Days",
-        price: "$24.99",
-        checkoutUrl: "https://your-sellauth-link"
-      },
-      {
-        id: "internal-30d",
-        label: "30 Days",
-        price: "$44.99",
-        checkoutUrl: "https://your-sellauth-link"
-      },
-      {
-        id: "internal-life",
-        label: "Lifetime",
-        price: "$99.99",
-        checkoutUrl: "https://your-sellauth-link"
-      }
+      { id: "internal-1d", label: "1 Day", price: "$9.99", checkoutUrl: "https://your-sellauth-link" },
+      { id: "internal-7d", label: "7 Days", price: "$24.99", checkoutUrl: "https://your-sellauth-link" },
+      { id: "internal-30d", label: "30 Days", price: "$44.99", checkoutUrl: "https://your-sellauth-link" },
+      { id: "internal-life", label: "Lifetime", price: "$99.99", checkoutUrl: "https://your-sellauth-link" }
     ],
     features: [
       "Layered ESP with visibility checks",
@@ -95,6 +80,9 @@ export const products = [
     ]
   },
 
+  // ----------------------------------------------------
+  // HWID SPOOFER (unchanged)
+  // ----------------------------------------------------
   {
     id: "hwid",
     name: "NoClip HWID Spoofer",
@@ -106,26 +94,11 @@ export const products = [
     image: "/noclip-spoofer.png",
     tags: ["Safety", "HWID spoof"],
     priceFrom: "$8.99",
-    comingSoon: true, // ✅ show COMING SOON
+    comingSoon: true,
     plans: [
-      {
-        id: "hwid-7d",
-        label: "7 Days",
-        price: "$8.99",
-        checkoutUrl: "https://your-sellauth-link"
-      },
-      {
-        id: "hwid-30d",
-        label: "30 Days",
-        price: "$19.99",
-        checkoutUrl: "https://your-sellauth-link"
-      },
-      {
-        id: "hwid-life",
-        label: "Lifetime",
-        price: "$39.99",
-        checkoutUrl: "https://your-sellauth-link"
-      }
+      { id: "hwid-7d", label: "7 Days", price: "$8.99", checkoutUrl: "https://your-sellauth-link" },
+      { id: "hwid-30d", label: "30 Days", price: "$19.99", checkoutUrl: "https://your-sellauth-link" },
+      { id: "hwid-life", label: "Lifetime", price: "$39.99", checkoutUrl: "https://your-sellauth-link" }
     ],
     features: [
       "Full cleaner to wipe common traces",
@@ -136,7 +109,9 @@ export const products = [
     ]
   },
 
-  // 🔥 NFA CARD – single $3 plan
+  // ----------------------------------------------------
+  // RUST NFA ACCOUNTS (unchanged)
+  // ----------------------------------------------------
   {
     id: "nfa",
     name: "Rust NFA Accounts",
@@ -162,6 +137,62 @@ export const products = [
       "Email access details included",
       "Replacement for dead-on-arrival accounts",
       "Support via Discord for account issues"
+    ]
+  },
+
+  // ----------------------------------------------------
+  // ⭐ NEW PRODUCT — FORTNITE EXTERNAL
+  // ----------------------------------------------------
+  {
+    id: "fn-external",
+    name: "Fortnite External",
+    ribbon: "Best for legit closet",
+    subtitle: "Low-footprint Fortnite ESP + aim assist for safe competitive play.",
+    longSubtitle:
+      "Fortnite external cheat designed for safe closet use. Smooth ESP, clean aim assist, and fully undetected footprint.",
+    image: "/noclip-fortnite.png",
+    tags: ["External", "Undetected", "Legit play"],
+    priceFrom: "$3.5",
+    plans: [
+      { id: "fn-1d", label: "1 Day", price: "$3.5", checkoutUrl: "https://your-sellauth-link" },
+      { id: "fn-3d", label: "3 Days", price: "$7.5", checkoutUrl: "https://your-sellauth-link" },
+      { id: "fn-week", label: "Week", price: "$12.5", checkoutUrl: "https://your-sellauth-link" },
+      { id: "fn-month", label: "Month", price: "$30", checkoutUrl: "https://your-sellauth-link" }
+    ],
+    features: [
+      "ESP with clean player outlines",
+      "Smooth aim assist with legit smoothing",
+      "Stream-safe capture (undetected overlay)",
+      "Low CPU usage for high FPS",
+      "24/7 support via Discord"
+    ]
+  },
+
+  // ----------------------------------------------------
+  // ⭐ NEW PRODUCT — RAINBOW SIX EXTERNAL
+  // ----------------------------------------------------
+  {
+    id: "r6-external",
+    name: "Rainbow Six External",
+    ribbon: "Best for legit closet",
+    subtitle: "Clean ESP + aim assist optimized for R6 without performance hit.",
+    longSubtitle:
+      "Rainbow Six external ESP + aim assist with clean visuals and low performance impact. Optimized for legit closet gameplay.",
+    image: "/noclip-r6.png",
+    tags: ["External", "Undetected", "Legit play"],
+    priceFrom: "$3.5",
+    plans: [
+      { id: "r6-1d", label: "1 Day", price: "$3.5", checkoutUrl: "https://your-sellauth-link" },
+      { id: "r6-3d", label: "3 Days", price: "$7.5", checkoutUrl: "https://your-sellauth-link" },
+      { id: "r6-week", label: "Week", price: "$12.5", checkoutUrl: "https://your-sellauth-link" },
+      { id: "r6-month", label: "Month", price: "$30", checkoutUrl: "https://your-sellauth-link" }
+    ],
+    features: [
+      "ESP with visibility checks",
+      "Legit smooth aim assist",
+      "Stream-safe overlay support",
+      "Optimized for high FPS",
+      "Active Discord support and updates"
     ]
   }
 ];
