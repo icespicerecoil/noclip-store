@@ -57,7 +57,7 @@ export default function ProductDetail() {
               {product.ribbon || "Best for legit closet"}
             </p>
 
-      z      <h1 className="product-detail-title">{product.name}</h1>
+            <h1 className="product-detail-title">{product.name}</h1>
 
             <p className="product-detail-subtitle">
               {product.longSubtitle || product.subtitle}
@@ -136,9 +136,7 @@ export default function ProductDetail() {
                     </button>
                   </div>
 
-                  {added && (
-                    <p className="added-flash">Added to cart ✔</p>
-                  )}
+                  {added && <p className="added-flash">Added to cart ✔</p>}
 
                   <a
                     href={DISCORD_URL}
