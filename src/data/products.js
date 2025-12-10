@@ -22,7 +22,7 @@ export const products = [
         label: "1 Day",
         price: "$3.5",
         checkoutUrl:
-          "https://no-clip.mysellauth.com/checkout/9dd21cd2c6408-0000008429084"
+          "https://no-clip.mysellauth.com/checkout/84bf53a9a5f0f-0000008464984" // NEW RUST LINK
       },
       {
         id: "rust-ext-3d",
@@ -67,7 +67,7 @@ export const products = [
         label: "1 Day",
         price: "$3.5",
         checkoutUrl:
-          "https://no-clip.mysellauth.com/checkout/5547442e6167b-0000008429090"
+          "https://no-clip.mysellauth.com/checkout/a75ec611b00d1-0000008464981" // NEW FORTNITE LINK
       },
       {
         id: "fn-3d",
@@ -110,7 +110,7 @@ export const products = [
         label: "Single NFA Account",
         price: "$3",
         checkoutUrl:
-          "https://no-clip.mysellauth.com/checkout/798aa1fdd0c0c-0000008429077"
+          "https://no-clip.mysellauth.com/checkout/a75ec611b00d1-0000008464981" // NEW NFA LINK (same as Fortnite as you sent)
       }
     ]
   },
@@ -172,13 +172,13 @@ export const products = [
     image: "/noclip-r6.png",
     tags: ["External", "R6", "Coming Soon"],
     priceFrom: "$3.5", // 👈 show price on card
-    comingSoon: true,   // 👈 still marked coming soon
-    featured: true,     // 👈 shows as the 3rd home card
+    comingSoon: true, // 👈 still marked coming soon
+    featured: true, // 👈 shows as the 3rd home card
     plans: [
       {
         id: "r6-1d",
         label: "1 Day",
-        price: "$3.5",  // 👈 still 3.5, no checkout yet
+        price: "$3.5",
         checkoutUrl: ""
       },
       {
