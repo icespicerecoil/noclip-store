@@ -10,10 +10,10 @@ import ProductDetail from "./pages/ProductDetail.jsx";
 import Status from "./pages/Status.jsx";
 import Support from "./pages/Support.jsx";
 import Guide from "./pages/Guide.jsx";
-import Cart from "./pages/cart.jsx";
+import Cart from "./pages/Cart.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
-import TOS from "./pages/TOS.jsx"; // <-- Terms of Service page
+import TOS from "./pages/TOS.jsx"; // Terms of Service page
 
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
@@ -26,9 +26,16 @@ export default function App() {
           <Navbar />
 
           <Routes>
+            {/* Home */}
             <Route path="/" element={<Home />} />
+
+            {/* Product list */}
             <Route path="/products" element={<Products />} />
-            <Route path="/products/:id" element={<ProductDetail />} />
+
+            {/* 🔥 Product detail (SINGULAR) */}
+            <Route path="/product/:id" element={<ProductDetail />} />
+
+            {/* Other pages */}
             <Route path="/status" element={<Status />} />
             <Route path="/support" element={<Support />} />
             <Route path="/guide" element={<Guide />} />
