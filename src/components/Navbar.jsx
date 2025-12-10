@@ -19,7 +19,7 @@ export default function Navbar() {
         <Link to="/status">Status</Link>
         <Link to="/support">Support</Link>
         <Link to="/guide">Guide</Link>
-        <Link to="/cart">Cart</Link>
+        {/* Cart removed */}
         <Link to="/tos">TOS</Link>
 
         <a
