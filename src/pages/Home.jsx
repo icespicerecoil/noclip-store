@@ -13,8 +13,34 @@ const scrollToId = (id) => {
 const featuredProducts =
   products.filter((p) => p.featured) || products.slice(0, 3);
 
-// 3-day (72h) discount timer – starts when the page loads
-const DISCOUNT_END = Date.now() + 72 * 60 * 60 * 1000;
+/**
+ * Get a persistent 3-day discount end time.
+ * - First visit: sets now + 72h and stores it in localStorage
+ * - Refresh / reopening: reuses the same timestamp, so it DOESN'T reset
+ */
+function getDiscountEnd() {
+  try {
+    const key = "noclip_discount_end";
+    const stored = window.localStorage.getItem(key);
+
+    if (stored) {
+      const parsed = parseInt(stored, 10);
+      if (!Number.isNaN(parsed)) return parsed;
+    }
+
+    // no stored value → create one for 72h from now
+    const end = Date.now() + 72 * 60 * 60 * 1000;
+    window.localStorage.setItem(key, String(end));
+    return end;
+  } catch {
+    // if localStorage is blocked, just fall back to 72h (will reset on reload, but that's rare)
+    return Date.now() + 72 * 60 * 60 * 1000;
+  }
+}
+
+const DISCOUNT_END = typeof window !== "undefined"
+  ? getDiscountEnd()
+  : Date.now() + 72 * 60 * 60 * 1000;
 
 const Home = () => {
   return (
@@ -65,7 +91,7 @@ const Home = () => {
               </button>
             </div>
 
-            {/* ======= 50% DISCOUNT BANNER WITH TIMER (REPLACES PILLS) ======= */}
+            {/* ======= 50% DISCOUNT BANNER WITH TIMER ======= */}
             <div
               style={{
                 marginTop: "24px",
@@ -110,7 +136,7 @@ const Home = () => {
                     lineHeight: 1.3,
                   }}
                 >
-                  Limited time sale – once the timer hits 00:00:00, prices go
+                  Limited time sale – when the timer hits 00:00:00, prices go
                   back to normal.
                 </span>
               </div>
