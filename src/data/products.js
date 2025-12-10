@@ -39,8 +39,9 @@ export const products = [
       {
         id: "rust-ext-month",
         label: "Month",
-        price: "Coming Soon",
-        checkoutUrl: ""
+        price: "$30",
+        checkoutUrl:
+          "https://no-clip.mysellauth.com/checkout/3eb725d85ca8f-0000008473829"
       }
     ]
   },
