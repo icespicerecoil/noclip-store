@@ -10,7 +10,7 @@ import ProductDetail from "./pages/ProductDetail.jsx";
 import Status from "./pages/Status.jsx";
 import Support from "./pages/Support.jsx";
 import Guide from "./pages/Guide.jsx";
-import Cart from "./pages/Cart.jsx";
+// import Cart from "./pages/Cart.jsx"; // ❌ Removed - file no longer exists
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import TOS from "./pages/TOS.jsx"; // Terms of Service page
@@ -32,14 +32,17 @@ export default function App() {
             {/* Product list */}
             <Route path="/products" element={<Products />} />
 
-            {/* 🔥 Product detail (SINGULAR) */}
+            {/* Product detail */}
             <Route path="/product/:id" element={<ProductDetail />} />
 
             {/* Other pages */}
             <Route path="/status" element={<Status />} />
             <Route path="/support" element={<Support />} />
             <Route path="/guide" element={<Guide />} />
-            <Route path="/cart" element={<Cart />} />
+
+            {/* Removed cart route */}
+            {/* <Route path="/cart" element={<Cart />} /> */}
+
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/tos" element={<TOS />} />
