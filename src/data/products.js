@@ -1,5 +1,4 @@
 // src/data/products.js
-
 export const products = [
   // =====================================
   // RUST EXTERNAL (LIVE)
@@ -16,6 +15,7 @@ export const products = [
     tags: ["External", "Rust", "Undetected", "Legit play"],
     priceFrom: "$3.5",
     comingSoon: false,
+    featured: true, // 👈 show on home card row
     plans: [
       {
         id: "rust-ext-1d",
@@ -60,6 +60,7 @@ export const products = [
     tags: ["External", "Fortnite", "Undetected", "Legit play"],
     priceFrom: "$3.5",
     comingSoon: false,
+    featured: true, // 👈 now shows as middle home card
     plans: [
       {
         id: "fn-1d",
@@ -102,6 +103,7 @@ export const products = [
     tags: ["Accounts", "Rust", "NFA"],
     priceFrom: "$3",
     comingSoon: false,
+    // not featured on the home row
     plans: [
       {
         id: "nfa-basic",
@@ -127,6 +129,7 @@ export const products = [
     tags: ["Internal", "Rust", "Coming Soon"],
     priceFrom: "Coming Soon",
     comingSoon: true,
+    // featured: false => no longer on home row
     plans: [
       {
         id: "rust-int-1d",
@@ -156,7 +159,7 @@ export const products = [
   },
 
   // =====================================
-  // R6 EXTERNAL (COMING SOON)
+  // R6 EXTERNAL (COMING SOON BUT SHOW $3.5)
   // =====================================
   {
     id: "r6-external",
@@ -168,13 +171,14 @@ export const products = [
       "R6 external cheat with ESP, aim assist, visibility checks and QoL features.",
     image: "/noclip-r6.png",
     tags: ["External", "R6", "Coming Soon"],
-    priceFrom: "Coming Soon",
-    comingSoon: true,
+    priceFrom: "$3.5", // 👈 show price on card
+    comingSoon: true,   // 👈 still marked coming soon
+    featured: true,     // 👈 shows as the 3rd home card
     plans: [
       {
         id: "r6-1d",
         label: "1 Day",
-        price: "Coming Soon",
+        price: "$3.5",  // 👈 still 3.5, no checkout yet
         checkoutUrl: ""
       },
       {
@@ -211,6 +215,7 @@ export const products = [
     tags: ["Spoofer", "HWID", "Coming Soon"],
     priceFrom: "Coming Soon",
     comingSoon: true,
+    // featured: false => no longer on home row
     plans: [
       {
         id: "spoofer-1d",

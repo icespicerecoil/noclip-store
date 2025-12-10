@@ -1,11 +1,20 @@
 // src/pages/Home.jsx
 import { Link } from "react-router-dom";
+import { products } from "../data/products";
+import Countdown from "../components/Countdown";
 
 // smooth scroll helper for the buttons
 const scrollToId = (id) => {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 };
+
+// pick which products show in the "Core noclip products" row
+const featuredProducts =
+  products.filter((p) => p.featured) || products.slice(0, 3);
+
+// 3-day (72h) discount timer – starts when the page loads
+const DISCOUNT_END = Date.now() + 72 * 60 * 60 * 1000;
 
 const Home = () => {
   return (
@@ -56,48 +65,76 @@ const Home = () => {
               </button>
             </div>
 
-            {/* pill-style vouch row */}
-            <div className="hero-pills">
-              <div className="hero-pill">
-                <span className="hero-pill-icon">⚡</span>
-                <div className="hero-pill-text">
-                  <span className="hero-pill-main">Instant delivery</span>
-                  <span className="hero-pill-sub">
-                    Keys & panel access right after payment.
-                  </span>
-                </div>
+            {/* ======= 50% DISCOUNT BANNER WITH TIMER (REPLACES PILLS) ======= */}
+            <div
+              style={{
+                marginTop: "24px",
+                maxWidth: "540px",
+                padding: "14px 22px",
+                borderRadius: "999px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "14px",
+                background:
+                  "linear-gradient(90deg, rgba(255,77,210,0.95), rgba(110,0,255,0.95))",
+                boxShadow: "0 0 26px rgba(110,0,255,0.75)",
+                border: "1px solid rgba(255,255,255,0.25)",
+                color: "#ffffff",
+                backdropFilter: "blur(6px)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "4px",
+                  minWidth: 0,
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "0.95rem",
+                    fontWeight: 800,
+                    letterSpacing: "0.04em",
+                    textTransform: "uppercase",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  🎉 50% discount on all products
+                </span>
+                <span
+                  style={{
+                    fontSize: "0.8rem",
+                    opacity: 0.92,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  Limited time sale – once the timer hits 00:00:00, prices go
+                  back to normal.
+                </span>
               </div>
 
-              <div className="hero-pill">
-                <span className="hero-pill-icon">🛡</span>
-                <div className="hero-pill-text">
-                  <span className="hero-pill-main">Safety-focused stack</span>
-                  <span className="hero-pill-sub">
-                    External, internal & HWID tools tuned for Rust.
-                  </span>
-                </div>
-              </div>
-
-              <div className="hero-pill">
-                <span className="hero-pill-icon">💬</span>
-                <div className="hero-pill-text">
-                  <span className="hero-pill-main">1:1 Discord support</span>
-                  <span className="hero-pill-sub">
-                    Real humans, screen-share & config help.
-                  </span>
-                </div>
-              </div>
-
-              <div className="hero-pill hero-pill-highlight">
-                <span className="hero-pill-icon">★</span>
-                <div className="hero-pill-text">
-                  <span className="hero-pill-main">
-                    22,000+ sessions injected
-                  </span>
-                  <span className="hero-pill-sub">
-                    10,000+ players boosted · 5,000+ tickets solved.
-                  </span>
-                </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-end",
+                  gap: "4px",
+                  flexShrink: 0,
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "0.7rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    opacity: 0.9,
+                  }}
+                >
+                  Ends in
+                </span>
+                <Countdown targetTime={DISCOUNT_END} />
               </div>
             </div>
           </div>
@@ -172,84 +209,61 @@ const Home = () => {
           </div>
 
           <div className="home-products-grid">
-            {/* NoClip External */}
-            <article className="home-product-card">
-              <div className="home-product-img-wrap">
-                <img src="/noclip-external.png" alt="NoClip External" />
-              </div>
-              <h3>NoClip External</h3>
-              <p>
-                Low-footprint external cheat with ESP, aim assist, radar and QoL
-                features.
-              </p>
-              <div className="home-product-meta">
-                <span className="badge badge-green">External</span>
-                <span className="badge badge-blue">Low risk</span>
-              </div>
+            {featuredProducts.map((product) => (
+              <article key={product.id} className="home-product-card">
+                <div className="home-product-img-wrap">
+                  {product.image && (
+                    <img src={product.image} alt={product.name} />
+                  )}
+                </div>
 
-              <div className="home-product-footer">
-                <span className="home-product-price">
-                  from <strong>$7.99</strong> / month
-                </span>
+                <h3>{product.name}</h3>
 
-                <a href="#/products" className="btn-small">
-                  View details
-                </a>
-              </div>
-            </article>
+                <p>{product.subtitle}</p>
 
-            {/* NoClip Pro */}
-            <article className="home-product-card">
-              <div className="home-product-img-wrap">
-                <img src="/noclip-pro.png" alt="NoClip Pro" />
-              </div>
-              <h3>NoClip Pro (Internal)</h3>
-              <p>
-                Smooth internal with ESP layers, aimbot, recoil control and misc
-                tools.
-              </p>
-              <div className="home-product-meta">
-                <span className="badge badge-purple">Internal</span>
-                <span className="badge badge-blue">Config system</span>
-              </div>
+                <div className="home-product-meta">
+                  {(product.tags || []).slice(0, 3).map((tag, idx) => (
+                    <span
+                      key={tag}
+                      className={
+                        "badge " +
+                        (idx === 0
+                          ? "badge-green"
+                          : idx === 1
+                          ? "badge-blue"
+                          : "badge-purple")
+                      }
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-              <div className="home-product-footer">
-                <span className="home-product-price">
-                  from <strong>$9.99</strong> / month
-                </span>
+                <div className="home-product-footer">
+                  <span className="home-product-price">
+                    {product.comingSoon ? (
+                      <>
+                        <strong>Coming soon</strong>
+                        {product.priceFrom && (
+                          <>
+                            {" · from "}
+                            <strong>{product.priceFrom}</strong>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        from <strong>$3.5</strong>
+                      </>
+                    )}
+                  </span>
 
-                <a href="#/products" className="btn-small">
-                  View details
-                </a>
-              </div>
-            </article>
-
-            {/* Spoofer */}
-            <article className="home-product-card">
-              <div className="home-product-img-wrap">
-                <img src="/noclip-spoofer.png" alt="NoClip HWID Spoofer" />
-              </div>
-              <h3>NoClip HWID Spoofer</h3>
-              <p>
-                Spoofing layer to protect accounts and reset identifiers when
-                needed.
-              </p>
-
-              <div className="home-product-meta">
-                <span className="badge badge-green">HWID</span>
-                <span className="badge badge-purple">Cleaner + tools</span>
-              </div>
-
-              <div className="home-product-footer">
-                <span className="home-product-price">
-                  from <strong>$19.99</strong> lifetime
-                </span>
-
-                <a href="#/products" className="btn-small">
-                  View details
-                </a>
-              </div>
-            </article>
+                  <Link to={`/product/${product.id}`} className="btn-small">
+                    View details
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
