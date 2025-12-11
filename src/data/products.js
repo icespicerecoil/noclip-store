@@ -15,35 +15,38 @@ export const products = [
     tags: ["External", "Rust", "Undetected", "Legit play"],
     priceFrom: "$3.5",
     comingSoon: false,
-    featured: true, // 👈 show on home card row
+    featured: true, // show on home card row
     plans: [
       {
         id: "rust-ext-1d",
         label: "1 Day",
         price: "$3.5",
-        checkoutUrl:
-          "https://no-clip.mysellauth.com/checkout/84bf53a9a5f0f-0000008464984" // NEW RUST LINK
+        // Rust External main product
+        checkoutUrl: "https://no-clip.mysellauth.com/product/rust-external",
       },
       {
         id: "rust-ext-3d",
         label: "3 Days",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "rust-ext-week",
         label: "Week",
-        price: "Coming Soon",
-        checkoutUrl: ""
+        // matches your SellAuth "Rust External Week" product price
+        price: "$12.5",
+        checkoutUrl:
+          "https://no-clip.mysellauth.com/product/rust-external-week",
       },
       {
         id: "rust-ext-month",
         label: "Month",
         price: "$30",
+        // Rust External monthly product
         checkoutUrl:
-          "https://no-clip.mysellauth.com/checkout/3eb725d85ca8f-0000008473829"
-      }
-    ]
+          "https://no-clip.mysellauth.com/product/rust-external-monthly",
+      },
+    ],
   },
 
   // =====================================
@@ -61,34 +64,34 @@ export const products = [
     tags: ["External", "Fortnite", "Undetected", "Legit play"],
     priceFrom: "$3.5",
     comingSoon: false,
-    featured: true, // 👈 now shows as middle home card
+    featured: true, // middle home card
     plans: [
       {
         id: "fn-1d",
         label: "1 Day",
         price: "$3.5",
         checkoutUrl:
-          "https://no-clip.mysellauth.com/checkout/a75ec611b00d1-0000008464981" // NEW FORTNITE LINK
+          "https://no-clip.mysellauth.com/product/fortnite-external",
       },
       {
         id: "fn-3d",
         label: "3 Days",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "fn-week",
         label: "Week",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "fn-month",
         label: "Month",
         price: "Coming Soon",
-        checkoutUrl: ""
-      }
-    ]
+        checkoutUrl: "",
+      },
+    ],
   },
 
   // =====================================
@@ -110,10 +113,9 @@ export const products = [
         id: "nfa-basic",
         label: "Single NFA Account",
         price: "$3",
-        checkoutUrl:
-          "https://no-clip.mysellauth.com/checkout/a75ec611b00d1-0000008464981" // NEW NFA LINK (same as Fortnite as you sent)
-      }
-    ]
+        checkoutUrl: "https://no-clip.mysellauth.com/product/noclip-nfa",
+      },
+    ],
   },
 
   // =====================================
@@ -130,33 +132,32 @@ export const products = [
     tags: ["Internal", "Rust", "Coming Soon"],
     priceFrom: "Coming Soon",
     comingSoon: true,
-    // featured: false => no longer on home row
     plans: [
       {
         id: "rust-int-1d",
         label: "1 Day",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "rust-int-3d",
         label: "3 Days",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "rust-int-week",
         label: "Week",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "rust-int-month",
         label: "Month",
         price: "Coming Soon",
-        checkoutUrl: ""
-      }
-    ]
+        checkoutUrl: "",
+      },
+    ],
   },
 
   // =====================================
@@ -172,35 +173,35 @@ export const products = [
       "R6 external cheat with ESP, aim assist, visibility checks and QoL features.",
     image: "/noclip-r6.png",
     tags: ["External", "R6", "Coming Soon"],
-    priceFrom: "$3.5", // 👈 show price on card
-    comingSoon: true, // 👈 still marked coming soon
-    featured: true, // 👈 shows as the 3rd home card
+    priceFrom: "$3.5", // show price on card
+    comingSoon: true, // still marked coming soon
+    featured: true, // shows as the 3rd home card
     plans: [
       {
         id: "r6-1d",
         label: "1 Day",
         price: "$3.5",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "r6-3d",
         label: "3 Days",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "r6-week",
         label: "Week",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "r6-month",
         label: "Month",
         price: "Coming Soon",
-        checkoutUrl: ""
-      }
-    ]
+        checkoutUrl: "",
+      },
+    ],
   },
 
   // =====================================
@@ -216,28 +217,27 @@ export const products = [
     tags: ["Spoofer", "HWID", "Coming Soon"],
     priceFrom: "Coming Soon",
     comingSoon: true,
-    // featured: false => no longer on home row
     plans: [
       {
         id: "spoofer-1d",
         label: "1 Day",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "spoofer-week",
         label: "Week",
         price: "Coming Soon",
-        checkoutUrl: ""
+        checkoutUrl: "",
       },
       {
         id: "spoofer-month",
         label: "Month",
         price: "Coming Soon",
-        checkoutUrl: ""
-      }
-    ]
-  }
+        checkoutUrl: "",
+      },
+    ],
+  },
 ];
 
 // helper

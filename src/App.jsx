@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar.jsx";
 
@@ -32,20 +32,24 @@ export default function App() {
             {/* Product list */}
             <Route path="/products" element={<Products />} />
 
-            {/* Product detail */}
+            {/* Product detail
+                Support BOTH /product/:id and /products/:id
+                so even if the card links use /products/:id it still works. */}
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
 
             {/* Other pages */}
             <Route path="/status" element={<Status />} />
             <Route path="/support" element={<Support />} />
             <Route path="/guide" element={<Guide />} />
-
-            {/* Removed cart route */}
             {/* <Route path="/cart" element={<Cart />} /> */}
 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/tos" element={<TOS />} />
+
+            {/* Fallback – if some random path is hit, send to home instead of blank page */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Router>
       </CartProvider>
