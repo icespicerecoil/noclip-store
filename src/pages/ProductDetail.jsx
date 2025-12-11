@@ -5,7 +5,7 @@ import "./ProductDetail.css";
 import { getProductById } from "../data/products";
 import { useCart } from "../context/CartContext.jsx";
 
-const DISCORD_URL = "https://discord.gg/EuFPeMAB6Q";
+const DISCORD_URL = "https://discord.gg/EuFPeMAqc3";
 
 export default function ProductDetail() {
   const { id } = useParams();

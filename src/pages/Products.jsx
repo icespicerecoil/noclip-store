@@ -5,7 +5,8 @@ import "./Products.css";
 import { products } from "../data/products";
 import { useCart } from "../context/CartContext.jsx";
 
-const DISCORD_URL = "https://discord.gg/EuFPeMAB6Q";
+// ✅ FIXED DISCORD LINK
+const DISCORD_URL = "https://discord.gg/EuFPeMAqc3";
 
 export default function Products() {
   const { addToCart } = useCart();
